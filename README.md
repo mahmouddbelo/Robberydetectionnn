@@ -8,7 +8,7 @@ By integrating **YOLOv8 for object detection** and a **custom-trained deep learn
 
 ## **Demo Video**  
 Check out the demo of the Robbery Detection System in action!  
-🔗 **[LinkedIn Video]((https://www.linkedin.com/posts/mahmoud-abdelaal-99bb47276_yolo-ai-computervision-activity-7312853662920269824-i9CH?utm_source=share&utm_medium=member_desktop&rcm=ACoAAENx3McBt6KUlG3wX5cQleEpLQgjIE1lXLU))**  
+🔗 **[LinkedIn Video](https://www.linkedin.com/posts/mahmoud-abdelaal-99bb47276_yolo-ai-computervision-activity-7312853662920269824-i9CH?utm_source=share&utm_medium=member_desktop&rcm=ACoAAENx3McBt6KUlG3wX5cQleEpLQgjIE1lXLU)**  
 
 ## **Screenshots**  
 Here are some snapshots of the system in action:
