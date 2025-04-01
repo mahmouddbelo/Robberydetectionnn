@@ -1,23 +1,23 @@
 # **Robbery Detection System**  
 ### *Advanced AI-Powered Shoplifting Detection for Retail Security*  
+## **Overview**  
+The **Robbery Detection System** is a cutting-edge AI-powered solution designed to enhance retail security by detecting potential shoplifting behavior in real time. The system utilizes computer vision and deep learning to analyze video footage and classify individuals as either **"Shoplifter"** or **"Non-Shoplifter"** with high accuracy.  
+
+By integrating **YOLOv8 for object detection** and a **custom-trained deep learning model**, the system provides an efficient and automated method for loss prevention in retail stores.  
+
 
 ## **Demo Video**  
 Check out the demo of the Robbery Detection System in action!  
-🔗 **[LinkedIn Video]([YOUR_LINKEDIN_VIDEO_URL](https://www.linkedin.com/posts/mahmoud-abdelaal-99bb47276_yolo-ai-computervision-activity-7312853662920269824-i9CH?utm_source=share&utm_medium=member_desktop&rcm=ACoAAENx3McBt6KUlG3wX5cQleEpLQgjIE1lXLU))**  
+🔗 **[LinkedIn Video]((https://www.linkedin.com/posts/mahmoud-abdelaal-99bb47276_yolo-ai-computervision-activity-7312853662920269824-i9CH?utm_source=share&utm_medium=member_desktop&rcm=ACoAAENx3McBt6KUlG3wX5cQleEpLQgjIE1lXLU))**  
 
 ## **Screenshots**  
 Here are some snapshots of the system in action:
 
 1. **Detection Interface**  
-   ![Detection Interface](YOUR_SCREENSHOT_1_URL)
+   ![Detection Interface](https://github.com/mahmouddbelo/Robberydetectionnn/blob/main/robb%20(1).png)
 
 2. **Result View**  
-   ![Result View](YOUR_SCREENSHOT_2_URL)
-
-## **Overview**  
-The **Robbery Detection System** is a cutting-edge AI-powered solution designed to enhance retail security by detecting potential shoplifting behavior in real time. The system utilizes computer vision and deep learning to analyze video footage and classify individuals as either **"Shoplifter"** or **"Non-Shoplifter"** with high accuracy.  
-
-By integrating **YOLOv8 for object detection** and a **custom-trained deep learning model**, the system provides an efficient and automated method for loss prevention in retail stores.  
+   ![Result View](https://github.com/mahmouddbelo/Robberydetectionnn/blob/main/robb%20(2).png)
 
 ## **Project Structure**  
 
