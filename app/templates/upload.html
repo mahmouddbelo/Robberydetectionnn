@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Surveillance Video</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-dark: #0a192f;
+            --primary-accent: #64ffda;
+            --secondary-dark: #172a45;
+            --light-text: #ccd6f6;
+        }
+        body {
+            background-color: var(--primary-dark);
+            color: var(--light-text);
+            font-family: 'Calibri', 'Segoe UI', sans-serif;
+        }
+        .card-custom {
+            background-color: var(--secondary-dark);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .card-custom:hover {
+            border-color: var(--primary-accent);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.1);
+        }
+        .btn-custom {
+            background-color: var(--primary-accent);
+            color: #0a192f;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: transparent;
+            color: var(--primary-accent);
+            border: 1px solid var(--primary-accent);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card card-custom shadow">
+                    <div class="card-header bg-dark text-white text-center">
+                        <h3 class="mb-0">Upload Surveillance Video</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="video" class="form-label">Select video file:</label>
+                                <input class="form-control" type="file" id="video" name="video" accept="video/*" required>
+                            </div>
+                            <button type="submit" class="btn btn-custom w-100">Analyze Video</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

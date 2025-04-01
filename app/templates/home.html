@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robbery Detection System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-dark: #0a192f;
+            --primary-accent: #64ffda;
+            --secondary-dark: #172a45;
+            --light-text: #ccd6f6;
+            --dark-text: #1f1f1f;
+        }
+        
+        body {
+            background-color: var(--primary-dark);
+            color: var(--light-text);
+            font-family: 'Calibri', 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .security-gradient {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
+        }
+        
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-accent);
+            color: var(--dark-text);
+            font-weight: 600;
+        }
+        
+        .btn-security {
+            background-color: var(--primary-accent);
+            color: var(--dark-text);
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-security:hover {
+            background-color: transparent;
+            color: var(--primary-accent);
+            border: 1px solid var(--primary-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+        }
+        
+        .feature-card {
+            background-color: var(--secondary-dark);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary-accent);
+        }
+        
+        .accent-text {
+            color: var(--primary-accent);
+        }
+        
+        .security-icon {
+            font-size: 2.5rem;
+            color: var(--primary-accent);
+            margin-bottom: 1rem;
+        }
+        
+        .hero-section {
+            min-height: 80vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+        
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: radial-gradient(var(--primary-accent) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .demo-container {
+            border: 1px solid rgba(100, 255, 218, 0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .demo-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-accent), transparent);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark security-gradient py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-shield-lock-fill accent-text"></i> Robbery Detection
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'upload_video' %}">Demo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section security-gradient d-flex align-items-center">
+        <div class="hero-pattern"></div>
+        <div class="container hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bold mb-4">Advanced <span class="accent-text">Robbery Detection</span> System</h1>
+                    <p class="lead mb-4">AI-powered surveillance technology that identifies and alerts about suspicious activities in real-time, helping prevent theft and ensure security.</p>
+                    <div class="d-flex gap-3">
+                        <a href="{% url 'upload_video' %}" class="btn btn-security btn-lg px-4">
+                            <i class="bi bi-play-fill"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold mb-3">Powerful <span class="accent-text">Security Features</span></h2>
+                <p class="text-muted">Our system provides comprehensive robbery detection capabilities</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card p-4 h-100">
+                        <div class="security-icon">
+                            <i class="bi bi-camera-reels-fill"></i>
+                        </div>
+                        <h4>Real-time Analysis</h4>
+                        <p>Process live video feeds to detect suspicious activities as they happen with minimal latency.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="feature-card p-4 h-100">
+                        <div class="security-icon">
+                            <i class="bi bi-activity"></i>
+                        </div>
+                        <h4>Behavior Recognition</h4>
+                        <p>Advanced AI models identify suspicious behaviors and potential threats before they escalate.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="feature-card p-4 h-100">
+                        <div class="security-icon">
+                            <i class="bi bi-bell-fill"></i>
+                        </div>
+                        <h4>Instant Alerts</h4>
+                        <p>Immediate notifications to security personnel when potential robbery is detected.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="feature-card p-4 h-100">
+                        <div class="security-icon">
+                            <i class="bi bi-database-fill"></i>
+                        </div>
+                        <h4>Evidence Archive</h4>
+                        <p>Automatically stores video evidence with timestamps for legal proceedings.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="feature-card p-4 h-100">
+                        <div class="security-icon">
+                            <i class="bi bi-diagram-3-fill"></i>
+                        </div>
+                        <h4>Multi-Camera Support</h4>
+                        <p>Simultaneously monitor multiple camera feeds across different locations.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="feature-card p-4 h-100">
+                        <div class="security-icon">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <h4>Performance Analytics</h4>
+                        <p>Track detection accuracy and system performance over time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="py-5 security-gradient">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h2 class="fw-bold mb-4">Cutting-Edge <span class="accent-text">Detection Technology</span></h2>
+                    <p class="mb-4">Our system leverages state-of-the-art computer vision and deep learning algorithms to provide the most accurate robbery detection available.</p>
+                    
+                    <div class="d-flex mb-3">
+                        <div class="me-4">
+                            <h3 class="accent-text">99.2%</h3>
+                            <p>Detection Accuracy</p>
+                        </div>
+                        <div class="me-4">
+                            <h3 class="accent-text">24/7</h3>
+                            <p>Monitoring</p>
+                        </div>
+                        <div>
+                            <h3 class="accent-text"><500ms</h3>
+                            <p>Response Time</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-security">
+                        <i class="bi bi-file-earmark-text"></i> Technical Specifications
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="p-4 bg-dark rounded">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="badge bg-danger me-2">YOLOv8</span>
+                            <span class="badge bg-primary me-2">Deep Learning</span>
+                            <span class="badge bg-success">Real-time</span>
+                        </div>
+                        <pre class="text-success mb-0" style="font-family: 'Courier New', monospace;">
+# Sample detection code
+model = YOLO('robbery_detection.pt')
+results = model(video_stream)
+
+for detection in results:
+    if detection.class == 'robbery':
+        trigger_alert()
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5">
+        <div class="container py-5 text-center">
+            <h2 class="fw-bold mb-4">Ready to <span class="accent-text">Enhance Your Security</span>?</h2>
+            <p class="lead mb-5">Experience the power of AI-driven robbery detection for your business.</p>
+            <a href="{% url 'upload_video' %}" class="btn btn-security btn-lg px-5 py-3">
+                <i class="bi bi-shield-check"></i> Try Free Demo
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="security-gradient text-center py-4">
+        <div class="container">
+            <p class="mb-0">© 2023 Robbery Detection System. All rights reserved.</p>
+            <div class="mt-3">
+                <a href="#" class="text-light mx-2"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-light mx-2"><i class="bi bi-github"></i></a>
+                <a href="#" class="text-light mx-2"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
